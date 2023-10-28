@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "858409667624",
+    "project_id": "project-nist-17ac9",
+    "storage_bucket": "project-nist-17ac9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858409667624:android:eb24dec0f41205016eb91d",
+        "android_client_info": {
+          "package_name": "com.project.nist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyrzwcpysHcI8kRTj7ZDRN3qLRQHKPWkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

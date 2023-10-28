@@ -1,0 +1,6 @@
+package com.project.nist
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
