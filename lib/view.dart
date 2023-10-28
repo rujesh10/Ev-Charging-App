@@ -84,6 +84,7 @@ class _JobListState extends State<JobList> {
             ],
           ),
         ),
+        //sizebox
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.01,
         ),
