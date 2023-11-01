@@ -137,7 +137,7 @@ class _JobListState extends State<JobList> {
                                         SizedBox(
                                           width: 150,
                                           child: Text(
-                                            dataList[e.key].name ?? "Ui",
+                                            dataList[e.key].name,
                                             overflow: TextOverflow.ellipsis,
                                             style: const TextStyle(
                                                 fontSize: 16.0,
@@ -148,7 +148,7 @@ class _JobListState extends State<JobList> {
                                           height: 30,
                                           width: 150,
                                           child: Text(
-                                            dataList[e.key].address!,
+                                            dataList[e.key].address,
                                             overflow: TextOverflow.ellipsis,
                                             style: const TextStyle(
                                               fontSize: 14.0,
@@ -191,8 +191,8 @@ class _JobListState extends State<JobList> {
                                         CustomAdd(
                                           icon: Icons.delete_outline,
                                           onpressed: () {
-                                            showDeleteConfirmation(context,
-                                                dataList[e.key].phone!);
+                                            showDeleteConfirmation(
+                                                context, dataList[e.key].phone);
                                           },
                                         )
                                       ],

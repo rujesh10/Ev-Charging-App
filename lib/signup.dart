@@ -110,7 +110,7 @@ class _SignupState extends State<Signup> {
                               height: 20,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(left: 20),
                               child: Text(
                                 "",
                                 style: TextStyle(
