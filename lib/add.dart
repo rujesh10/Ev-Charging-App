@@ -171,7 +171,7 @@ class _AddState extends State<Add> {
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: TextFormField(
-                  initialValue: widget.lat.toString(),
+                  initialValue: widget.lat,
                   keyboardType: TextInputType.phone,
                   onChanged: (value) {
                     setState(() {

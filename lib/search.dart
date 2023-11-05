@@ -126,6 +126,7 @@ class _SearchState extends State<Search> {
                   itemCount: _searchResults.length,
                   itemBuilder: (context, index) {
                     final searchData = _searchResults[index];
+
                     final name = searchData['name'] ?? 'N/A';
                     final address = searchData['address'] ?? 'N/A';
                     final phone = searchData['phone'] ?? 'N/A';
@@ -229,7 +230,7 @@ class _SearchState extends State<Search> {
                                                 padding: const EdgeInsets.only(
                                                     left: 5),
                                                 child: Text(
-                                                  "3.5km/50min",
+                                                  "0 km",
                                                   style: TextStyle(
                                                       color: Colors.grey),
                                                 ),

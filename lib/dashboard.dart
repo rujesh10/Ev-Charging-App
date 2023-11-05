@@ -65,7 +65,7 @@ class _DashboardState extends State<Dashboard> {
                   return Future<void>.delayed(const Duration(seconds: 2));
                 },
                 child: SingleChildScrollView(
-                  child: dashboardUi(state.dataList!),
+                  child: dashboardUi(state.dataList),
                 ),
               ),
             );
@@ -77,7 +77,12 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  dashboardUi(List<StationModel> dataList) {
+  Widget dashboardUi(List<StationModel>? dataList) {
+    if (dataList == null || dataList.isEmpty) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
     return Column(
       children: [
         Stack(

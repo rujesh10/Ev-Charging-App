@@ -62,6 +62,12 @@ class _JobListState extends State<JobList> {
   }
 
   stationListUi(List<StationModel>? dataList) {
+    if (dataList == null || dataList.isEmpty) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+
     return Column(
       children: [
         Padding(
@@ -90,7 +96,7 @@ class _JobListState extends State<JobList> {
         ),
         SingleChildScrollView(
           child: Column(
-            children: dataList!
+            children: dataList
                 .asMap()
                 .entries
                 .map(
@@ -189,7 +195,7 @@ class _JobListState extends State<JobList> {
                                           height: 20,
                                         ),
                                         CustomAdd(
-                                          icon: Icons.delete_outline,
+                                          icon: Icons.delete,
                                           onpressed: () {
                                             showDeleteConfirmation(
                                                 context, dataList[e.key].phone);

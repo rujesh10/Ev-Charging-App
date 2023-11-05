@@ -220,35 +220,38 @@ class _ChangePasswordState extends State<ChangePassword> {
                   width: 350,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        FirebaseFirestore.instance
-                            .collection("Signup")
-                            .doc(userId)
-                            .update({
-                          'password': newpassword,
-                          'cpassword': cpassword
-                        }).then((value) {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text("Password Changed"),
-                                content: Text(
-                                    "Your password has been successfully changed."),
-                                actions: [
-                                  TextButton(
-                                    child: Text("OK"),
-                                    onPressed: () {
-                                      Navigator.of(context)
-                                          .pop(); // Close the dialog
-                                    },
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                        });
+                        String? email = getUserEmail();
+                        if (email != null) {
+                          await FirebaseFirestore.instance
+                              .collection("Signup")
+                              .doc(email)
+                              .update({
+                            'password': newpassword,
+                            'cpassword': cpassword,
+                          }).then((value) {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Password Changed"),
+                                  content: Text(
+                                      "Your password has been successfully changed."),
+                                  actions: [
+                                    TextButton(
+                                      child: Text("OK"),
+                                      onPressed: () {
+                                        Navigator.of(context)
+                                            .pop(); // Close the dialog
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          });
+                        }
                       }
                     },
                     child: Text("Submit"),
