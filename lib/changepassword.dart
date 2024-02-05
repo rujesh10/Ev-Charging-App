@@ -30,23 +30,23 @@ class _ChangePasswordState extends State<ChangePassword> {
     return null;
   }
 
-  getDataFromDatabase() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    email = prefs.getString('email') ?? '';
-    if (email!.isNotEmpty) {
-      var response = await FirebaseFirestore.instance
-          .collection('Signup')
-          .where("email", isEqualTo: email)
-          .get();
-      final user = response.docs.first;
-      password = user.data()['password'] ?? "";
+  // getDataFromDatabase() async {
+  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   email = prefs.getString('email') ?? '';
+  //   if (email!.isNotEmpty) {
+  //     var response = await FirebaseFirestore.instance
+  //         .collection('Signup')
+  //         .where("email", isEqualTo: email)
+  //         .get();
+  //     final user = response.docs.first;
+  //     password = user.data()['password'] ?? "";
 
-      setState(() {
-        password;
-        userId = user.id;
-      });
-    }
-  }
+  //     setState(() {
+  //       password;
+  //       userId = user.id;
+  //     });
+  //   }
+  // }
 
   Future<void> updateNewPasswordInFirestore(String newpassword) async {
     String? email = getUserEmail();

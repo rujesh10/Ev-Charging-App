@@ -139,7 +139,7 @@ class _DashboardState extends State<Dashboard> {
                                         const EdgeInsets.only(left: 15, top: 5),
                                     child: Row(
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.location_on_rounded,
                                           color:
                                               Color.fromARGB(255, 236, 33, 18),
@@ -210,39 +210,20 @@ class _DashboardState extends State<Dashboard> {
                                             height: 50,
                                             child: ElevatedButton(
                                               onPressed: () async {
-                                                String url =
-                                                    'https://www.google.com/maps/search/?api=1&query=$long,$lat';
-                                                if (await canLaunch(url)) {
-                                                  await launch(url);
+                                                // Check if both latitude and longitude are available
+                                                if (lat != null &&
+                                                    long != null) {
+                                                  String url =
+                                                      'https://www.google.com/maps/search/?api=1&query=$lat,$long';
+                                                  if (await canLaunch(url)) {
+                                                    await launch(url);
+                                                  } else {
+                                                    throw 'Could not launch $url';
+                                                  }
                                                 } else {
-                                                  throw 'Could not launch $url';
+                                                  // Handle the case where lat and long are not available yet
+                                                  // You might want to show a loading indicator or an error message
                                                 }
-                                                // String? latitudeString =
-                                                //     dataList[index].latitude;
-                                                // String? longitudeString =
-                                                //     dataList[index].longitude;
-
-                                                // if (latitudeString != null &&
-                                                //     longitudeString != null) {
-                                                //   double latitude =
-                                                //       double.tryParse(
-                                                //               latitudeString) ??
-                                                //           0.0;
-                                                //   double longitude =
-                                                //       double.tryParse(
-                                                //               longitudeString) ??
-                                                //           0.0;
-
-                                                //   String url =
-                                                //       'maps:https://www.google.com/maps/search/?api=1&query=$latitudeString,$longitudeString';
-                                                //   if (await canLaunch(url)) {
-                                                //     await launch(url);
-                                                //   } else {
-                                                //     throw 'Could not launch $url';
-                                                //   }
-                                                // } else {
-                                                //   // Handle case where latitude or longitude is null
-                                                // }
                                               },
                                               child: Text("View"),
                                               style: ElevatedButton.styleFrom(

@@ -19,17 +19,14 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   Future<void> _submitData() async {
     try {
-      // Assuming 'users' is the reference to your Firestore collection
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection('Signup')
           .where('email', isEqualTo: email)
           .get();
 
       if (querySnapshot.docs.isNotEmpty) {
-        // Email already exists, show an error message
         showEmailExistsSnackbar(context);
       } else {
-        // Email doesn't exist, proceed with sign-up
         BlocProvider.of<LoginBloc>(context).add(SignupEvent(
             name: name,
             address: address,

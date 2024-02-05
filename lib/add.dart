@@ -28,8 +28,8 @@ class _AddState extends State<Add> {
     name = widget.name;
     address = widget.address;
     phone = widget.phone;
-    longitude = widget.long ?? "";
-    latitude = widget.lat ?? "";
+    longitude = widget.long;
+    latitude = widget.lat;
     super.initState();
   }
 

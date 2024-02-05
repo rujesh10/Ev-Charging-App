@@ -36,6 +36,25 @@ class _SettingsState extends State<Settings> {
     await getDataFromDatabase();
   }
 
+  Future<void> getUserRole() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    email = prefs.getString('email') ?? '';
+    if (email!.isNotEmpty) {
+      var response = await FirebaseFirestore.instance
+          .collection('Signup')
+          .where("email", isEqualTo: email)
+          .get();
+      final user = response.docs.first;
+      var role = user.data()['role'] ??
+          ""; // Assuming 'role' is the field for user roles
+
+      setState(() {
+        role;
+        var userId = user.id;
+      });
+    }
+  }
+
   areYouAdmin() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     email = prefs.getString("email") ?? "";
@@ -123,7 +142,7 @@ class _SettingsState extends State<Settings> {
                 name,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
               )
-            : Text("data"),
+            : Text(""),
         SizedBox(
           height: 5,
         ),
@@ -132,7 +151,7 @@ class _SettingsState extends State<Settings> {
                 email,
                 style: TextStyle(color: Colors.grey),
               )
-            : Text("data"),
+            : Text(""),
         SizedBox(
           height: 25,
         ),

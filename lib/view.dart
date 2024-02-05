@@ -195,7 +195,7 @@ class _JobListState extends State<JobList> {
                                           height: 20,
                                         ),
                                         CustomAdd(
-                                          icon: Icons.delete,
+                                          icon: Icons.delete_outline,
                                           onpressed: () {
                                             showDeleteConfirmation(
                                                 context, dataList[e.key].phone);
