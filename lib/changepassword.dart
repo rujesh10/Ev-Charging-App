@@ -255,7 +255,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                       }
                     },
                     child: Text("Submit"),
-                    style: ElevatedButton.styleFrom(primary: Colors.black),
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.black),
                   ),
                 ),
               ],

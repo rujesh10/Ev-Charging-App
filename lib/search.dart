@@ -62,6 +62,7 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();
@@ -256,11 +257,13 @@ class _SearchState extends State<Search> {
                                                     // ),
                                                     style: ElevatedButton
                                                         .styleFrom(
+                                                      foregroundColor:
+                                                          Colors.black,
+                                                      backgroundColor:
+                                                          Colors.white,
                                                       shadowColor: Color(1),
                                                       side: const BorderSide(
                                                           color: Colors.blue),
-                                                      primary: Colors.white,
-                                                      onPrimary: Colors.black,
                                                     ),
                                                   )),
                                               const SizedBox(

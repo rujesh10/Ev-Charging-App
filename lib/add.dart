@@ -242,7 +242,8 @@ class _AddState extends State<Add> {
                           color: Colors.white,
                         )
                       : Text("Submit"),
-                  style: ElevatedButton.styleFrom(primary: Colors.black),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.black),
                 ),
               ),
             ],

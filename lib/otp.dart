@@ -247,7 +247,7 @@ class _OtpCodeState extends State<OtpCode> {
                   }
                 },
                 child: Text("Verify"),
-                style: ElevatedButton.styleFrom(primary: Colors.black),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
               ),
             ),
           ),

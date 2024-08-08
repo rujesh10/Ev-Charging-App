@@ -260,7 +260,7 @@ class _StartState extends State<Start> {
                                       context: context,
                                       barrierDismissible: false,
                                       builder: (BuildContext context) {
-                                        return AlertDialog(
+                                        return const AlertDialog(
                                           content: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: const [
@@ -286,9 +286,9 @@ class _StartState extends State<Start> {
                                     });
                                   }
                                 },
-                                child: Text("LOGIN"),
+                                child: Text("LOGIN",style: TextStyle(color:Colors.white)),
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.black),
+                                    backgroundColor: Colors.black),
                               ),
                             ),
                             const SizedBox(

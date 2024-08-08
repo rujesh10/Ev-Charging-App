@@ -209,7 +209,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             width: 360,
             height: 45,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(primary: Colors.black),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
               onPressed: () async {
                 // if (await Helper.checkInternetConnection()) {
                 // delayFunction();

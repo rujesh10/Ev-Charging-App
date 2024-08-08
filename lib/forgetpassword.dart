@@ -124,7 +124,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               height: 45,
               width: 350,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.black),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
                 onPressed: () async {
                   setState(() {
                     loader = true;

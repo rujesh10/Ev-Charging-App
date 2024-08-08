@@ -349,7 +349,7 @@ class _SignupState extends State<Signup> {
                                   },
                                   child: Text("SIGN UP"),
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.black),
+                                      backgroundColor: Colors.black),
                                 ),
                               ),
                               const SizedBox(
@@ -371,7 +371,7 @@ class _SignupState extends State<Signup> {
                                             ));
                                       },
                                       child: const Text(
-                                        " Login",
+                                        "Login",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             color: Colors.black),

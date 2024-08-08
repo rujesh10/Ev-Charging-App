@@ -227,11 +227,11 @@ class _DashboardState extends State<Dashboard> {
                                               },
                                               child: Text("View"),
                                               style: ElevatedButton.styleFrom(
+                                                foregroundColor: Colors.black,
+                                                backgroundColor: Colors.white,
                                                 shadowColor: Color(1),
                                                 side: const BorderSide(
                                                     color: Colors.blue),
-                                                primary: Colors.white,
-                                                onPrimary: Colors.black,
                                               ),
                                             )),
                                         const SizedBox(
