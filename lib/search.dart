@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'helper.dart';
 
 class Search extends StatefulWidget {
@@ -273,16 +272,16 @@ class _SearchState extends State<Search> {
                                                 width: 150,
                                                 height: 50,
                                                 child: ElevatedButton(
-                                                  onPressed: () {
-                                                    // launchUrl('tell:+9813688376');
-                                                  },
-                                                  child: const Text('Contact'),
-                                                  // style: ButtonStyle(
-                                                  //   overlayColor:
-                                                  //       MaterialStateProperty.all(
-                                                  //           Colors.red),
-                                                  // ),
-                                                ),
+                                                    onPressed: () {
+                                                      // launchUrl('tell:+9813688376');
+                                                    },
+                                                    child: const Text('Contact')
+                                                    // style: ButtonStyle(
+                                                    //   overlayColor:
+                                                    //       MaterialStateProperty.all(
+                                                    //           Colors.red),
+                                                    // ),
+                                                    ),
                                               ),
                                             ],
                                           ),
